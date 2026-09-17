@@ -1,52 +1,27 @@
-# Artefact Sim
+1.제작
 
-WRO 2026 RoboMission Junior(Heritage Heroes)용 브라우저 시뮬레이터입니다. 설치 없이 링크만 열면 쓸 수 있습니다.
+간단한 로봇의 외형과 집게를 설정 할 수 있다.
 
-이 프로그램은 **정적 웹 앱**입니다. 서버 코드나 로그인이 없고, 로봇·프로그램은 각 브라우저의 저장소에만 남습니다.
+프로그램으로 넘어가기전 로봇의 외형을 확정하는 것을 추천한다.
 
-## 다른 사람에게 쓰는 방법
+2. 프로그램
 
-1. **웹으로 공유 (추천)**  
-   GitHub에 올린 뒤 GitHub Pages를 켜면 `https://<계정>.github.io/<저장소>/` 주소로 누구나 접속합니다. 아래 [GitHub Pages](#github-pages)를 보세요.
-2. **폴더로 공유**  
-   이 폴더 전체를 압축해 보내면, Windows는 `start.bat`, macOS/Linux는 `start.sh`를 실행합니다. Python 3가 필요합니다. 주소는 `http://127.0.0.1:8765/index.html` 입니다.  
-   `index.html`을 파일로 더블클릭하면 모듈 로딩이 막히므로, 반드시 로컬 서버(`start.bat` / `start.sh`)로 여세요.
+블록코딩과 pyrhon(약식, 특별함수)을 사용하고있다.
 
-## 화면 구성
+3. 미션
 
-- **제작**: 차체·집게·그리퍼
-- **프로그램**: 블록/텍스트 (미션·시뮬레이션이 같은 코드를 씀)
-- **미션**: 한 배치 실행, 배속 1–200×
-- **시뮬레이션**: 같은 프로그램을 120가지 발굴 배치에 대해 실행
-- **AI**: 규칙이 붙은 프롬프트 복사
+프로그램을 한번 실행시켜 보고 그 결과를 통해 오류를 알아 낼 수 있다.
 
-예제 프로그램은 `four_carry.txt`, `collect_all.txt`를 프로그램 탭(텍스트가 원본)에 붙여 넣으면 됩니다.
+미션에서 로봇의 초기 위치를 잡아야한다.
 
-## GitHub Pages
+4. 시뮬레이션
 
-저장소 루트에 `index.html`이 있으므로 Pages 소스를 브랜치 `main` / 폴더 `/` 로 두거나, 포함된 GitHub Actions(`Deploy GitHub Pages`)를 쓰면 됩니다.
+120가지의 모든 경우의수를 test한다.
 
-1. GitHub에서 New repository (Public)
-2. 이 폴더에서:
+추후 가장 오래걸리는 / 가장 빨리 처리하는 배열을 따로 시뮬레이션 후에 유저에게 안내하는 시스템을 넣을 것이다. 왼쪽위에 슬라이딩 바로 1배속부터 200배속 (화면동작생략)을 조절 할 수 있다.
 
-```bash
-git init -b main
-git add -A
-git commit -m "Publish Artefact Sim"
-git remote add origin https://github.com/<계정>/<저장소>.git
-git push -u origin main
-```
+5. AI
 
-3. 저장소 **Settings → Pages**
-   - Source: **GitHub Actions** (이 저장소의 워크플로 사용)
-   - 또는 Deploy from a branch: `main` / `/ (root)`
-4. 첫 배포 후 주소: `https://<계정>.github.io/<저장소>/`
+AI에 의존하는 사람들을 위해 넣은 기능이다.
 
-Actions를 쓰려면 저장소 Settings → Actions → General에서 워크플로를 허용해야 할 수 있습니다.
-
-## 로컬 실행
-
-Windows: `start.bat`  
-macOS / Linux: `chmod +x start.sh && ./start.sh`
-
-포트 8765가 이미 쓰이면 그 창을 닫거나 `start.bat`의 `PORT`를 바꾸세요.
+왼쪽 위에 자기가 하고 싶은 말을 넣고, 다시생성 버튼을 누른다. 그후 복사 버튼을 누르고 자신이 사용하는 ai에게 붙여넣으면 된다. 아직 완벽하지 않아 test하고 있는데, chatgpt의 경우 몇번의 수정사항을 요청하면 원하는 정도의 프로그램을 얻을 수 있다.(참고로 claude는 한번 물어보면 토큰을 다 써버리니 추천하지않는다.)
