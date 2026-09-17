@@ -16,8 +16,8 @@
         </div>
       </div>
       <nav class="tabs" role="tablist">
-        <button type="button" id="tab-hangar" data-tab="hangar" aria-selected="true">제작</button>
-        <button type="button" id="tab-program" data-tab="program" aria-selected="false">프로그램</button>
+        <button type="button" id="tab-hangar" data-tab="hangar" aria-selected="false">제작</button>
+        <button type="button" id="tab-program" data-tab="program" aria-selected="true">프로그램</button>
         <button type="button" id="tab-mission" data-tab="mission" aria-selected="false">미션</button>
         <button type="button" id="tab-sim" data-tab="sim" aria-selected="false">시뮬레이션</button>
         <button type="button" id="tab-ai" data-tab="ai" aria-selected="false">AI</button>
@@ -28,7 +28,7 @@
       </div>
     </header>
 
-    <section class="screen hangar-screen" id="screen-hangar">
+    <section class="screen hangar-screen" id="screen-hangar" hidden>
       <aside class="parts-dock">
         <p class="dock-title">Parts</p>
         <button type="button" class="part-card" data-part="chassis" id="part-chassis">
@@ -214,7 +214,7 @@
       <main id="sim-view-host"></main>
     </section>
 
-    <section class="screen program-screen" id="screen-program" hidden>
+    <section class="screen program-screen" id="screen-program">
       <aside class="block-palette" id="block-palette"></aside>
       <div class="block-workspace" id="block-workspace">
         <p class="workspace-hint">블록을 끌어다 놓으세요. 오른쪽은 같은 프로그램의 텍스트입니다. 미션·시뮬레이션이 이 코드를 공유합니다. 여러 배치를 버티려면 「아티팩트 배치」 블록(슬롯/박물관)과 colors·held·unused를 쓰세요.</p>
