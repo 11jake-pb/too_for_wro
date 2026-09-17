@@ -1,0 +1,18 @@
+# 120가지 공통 프로그램 (미사용 1색 + 발굴 홈 4색 순열)
+# 실행 시 colors = 이번 라운드 슬롯 색(왼쪽→오른쪽), unused = 미사용 색
+# pickup 뒤 held = 잡은 색. slot_x/y(i), museum_x/y(색)
+# drive_to(x, y, heading) 는 축 정렬 이동 후 헤딩
+# gx, gy 는 현재 집게 grab 중심. 기본 56×72 집게면 (0, 80)
+
+held = 0
+i = 1
+gx = 0
+gy = 80
+
+while i <= 4:
+  drive_to(slot_x(i) + gx, slot_y(i) - gy, 0)
+  pickup(arm, 1)
+  drive_to(museum_x(held) - gx, museum_y(held) + gy, 180)
+  put_down(arm, 1)
+  go_straight(220, -1)
+  i = i + 1
