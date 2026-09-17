@@ -103,4 +103,4 @@ if (useUnusedEl) useUnusedEl.checked = state.useUnused;
 syncInputs();
 applyRobot();
 renderArts();
-setTab("hangar");
+setTab("program");
